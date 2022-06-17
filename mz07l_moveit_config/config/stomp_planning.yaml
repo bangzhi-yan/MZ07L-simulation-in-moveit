@@ -1,5 +1,5 @@
-stomp/Manipulator1:
-  group_name: Manipulator1
+stomp/Manipulator3:
+  group_name: Manipulator3
   optimization:
     num_timesteps: 60
     num_iterations: 40

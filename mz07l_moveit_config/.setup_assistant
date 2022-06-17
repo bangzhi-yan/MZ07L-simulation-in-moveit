@@ -1,11 +1,11 @@
 moveit_setup_assistant_config:
   URDF:
-    package: ""
-    relative_path: /home/bionicle123/catkin_ws/src/mz07l.urdf
+    package: mz07l
+    relative_path: urdf/mz07l.urdf
     xacro_args: ""
   SRDF:
     relative_path: config/mz07l.srdf
   CONFIG:
-    author_name: BangzhiYan
+    author_name: Bangzhi-Yan
     author_email: 13269853329@163.com
-    generated_timestamp: 1655089147
+    generated_timestamp: 1655396057

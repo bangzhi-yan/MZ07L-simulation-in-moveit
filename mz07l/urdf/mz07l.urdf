@@ -8,16 +8,16 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.0339413550611 -2.31586087358626E-05 0.0999304628614501"
+        xyz="-0.0339413550611 -2.31586087358071E-05 0.0999304628614501"
         rpy="0 0 0" />
       <mass
         value="7.48699011088476" />
       <inertia
         ixx="0.0388213139945611"
-        ixy="1.55653817415135E-05"
-        ixz="-0.00111870477566242"
+        ixy="1.55653817415242E-05"
+        ixz="-0.00111870477566243"
         iyy="0.0609468745248538"
-        iyz="1.10362007676236E-05"
+        iyz="1.10362007676289E-05"
         izz="0.0543745416553623" />
     </inertial>
     <visual>
@@ -45,20 +45,73 @@
     </collision>
   </link>
   <link
+    name="base">
+    <inertial>
+      <origin
+        xyz="-0.0339413550611 -2.31586087358071E-05 0.0999304628614501"
+        rpy="0 0 0" />
+      <mass
+        value="7.48699011088476" />
+      <inertia
+        ixx="0.0388213139945611"
+        ixy="1.55653817415241E-05"
+        ixz="-0.00111870477566243"
+        iyy="0.0609468745248538"
+        iyz="1.10362007676287E-05"
+        izz="0.0543745416553623" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mz07l/meshes/base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mz07l/meshes/base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J0"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="base" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
     name="Link1">
     <inertial>
       <origin
-        xyz="0.014841 1.5699E-05 0.081192"
+        xyz="0.014841210559779 1.5699038155903E-05 0.0811924353570906"
         rpy="0 0 0" />
       <mass
-        value="4.412" />
+        value="4.4119668882482" />
       <inertia
-        ixx="0.035899"
-        ixy="5.2201E-07"
-        ixz="-0.0047926"
-        iyy="0.023641"
-        iyz="-8.4594E-06"
-        izz="0.030311" />
+        ixx="0.0358985469586784"
+        ixy="5.22005399590224E-07"
+        ixz="-0.0047925881900029"
+        iyy="0.0236405205772908"
+        iyz="-8.45938545831362E-06"
+        izz="0.0303112529475369" />
     </inertial>
     <visual>
       <origin
@@ -91,7 +144,7 @@
       xyz="0 0 0.197"
       rpy="0 0 0" />
     <parent
-      link="base_link" />
+      link="base" />
     <child
       link="Link1" />
     <axis
@@ -100,22 +153,22 @@
       lower="-2.97"
       upper="2.97"
       effort="100"
-      velocity="1" />
+      velocity="5.24" />
   </joint>
   <link
     name="Link2">
     <inertial>
       <origin
-        xyz="-0.032892 -0.19917 -0.00011311"
+        xyz="-0.011346 -0.20155 -0.00011313"
         rpy="0 0 0" />
       <mass
         value="6.848" />
       <inertia
-        ixx="0.14404"
-        ixy="-0.013206"
-        ixz="2.2979E-05"
-        iyy="0.031526"
-        iyz="0.00015771"
+        ixx="0.14556"
+        ixy="-0.00090711"
+        ixz="5.9383E-06"
+        iyy="0.030004"
+        iyz="0.00015927"
         izz="0.12908" />
     </inertial>
     <visual>
@@ -146,7 +199,7 @@
     name="J2"
     type="revolute">
     <origin
-      xyz="0.05549 0 0.15313"
+      xyz="0.05 0 0.148"
       rpy="-1.5708 0 0" />
     <parent
       link="Link1" />
@@ -158,23 +211,23 @@
       lower="-2.36"
       upper="1.40"
       effort="100"
-      velocity="1" />
+      velocity="4.89" />
   </joint>
   <link
     name="Link3">
     <inertial>
       <origin
-        xyz="-0.0090499 -0.020552 -0.00035078"
+        xyz="-0.00904991070713413 -0.0205515465689395 -0.000350779118959976"
         rpy="0 0 0" />
       <mass
-        value="2.9258" />
+        value="2.92582891160545" />
       <inertia
-        ixx="0.0079804"
-        ixy="0.00090576"
-        ixz="-2.4093E-05"
-        iyy="0.010878"
-        iyz="4.0089E-05"
-        izz="0.013867" />
+        ixx="0.00798036496861194"
+        ixy="0.000905760336948981"
+        ixz="-2.40936433332828E-05"
+        iyy="0.0108776733436978"
+        iyz="4.00887085723535E-05"
+        izz="0.0138666321003948" />
     </inertial>
     <visual>
       <origin
@@ -204,8 +257,8 @@
     name="J3"
     type="revolute">
     <origin
-      xyz="-0.043963 -0.40764 0.0005"
-      rpy="0 0 -0.10743" />
+      xyz="0 -0.41 0"
+      rpy="0 0 0" />
     <parent
       link="Link2" />
     <child
@@ -213,23 +266,23 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-2.43"
-      upper="4.71"
+      lower="-1.169"
+      upper="3.316"
       effort="100"
-      velocity="1" />
+      velocity="6.28" />
   </joint>
   <link
     name="Link4">
     <inertial>
       <origin
-        xyz="0.00015954 0.00087417 -0.18756"
+        xyz="0.00015954 0.00087409 -0.18756"
         rpy="0 0 0" />
       <mass
         value="3.6583" />
       <inertia
         ixx="0.036368"
-        ixy="1.7012E-05"
-        ixz="-1.3478E-05"
+        ixy="1.7015E-05"
+        ixz="-1.3434E-05"
         iyy="0.034763"
         iyz="-0.00043475"
         izz="0.0075828" />
@@ -274,23 +327,23 @@
       lower="-3.32"
       upper="3.32"
       effort="100"
-      velocity="1" />
+      velocity="9.60" />
   </joint>
   <link
     name="Link5">
     <inertial>
       <origin
-        xyz="0.0230406181638934 2.08510693291419E-05 -0.00447853212657651"
+        xyz="0.023041 2.0859E-05 -0.0044785"
         rpy="0 0 0" />
       <mass
-        value="0.394276330704897" />
+        value="0.39428" />
       <inertia
-        ixx="0.000415412041832548"
-        ixy="-1.54162941581748E-08"
-        ixz="-4.17402909160816E-05"
-        iyy="0.000538362833357643"
-        iyz="-6.30830998657262E-07"
-        izz="0.00049121106760061" />
+        ixx="0.00041541"
+        ixy="-1.4643E-08"
+        ixz="-4.174E-05"
+        iyy="0.00053836"
+        iyz="-6.3077E-07"
+        izz="0.00049121" />
     </inertial>
     <visual>
       <origin
@@ -332,23 +385,23 @@
       lower="-2.09"
       upper="2.09"
       effort="100"
-      velocity="1" />
+      velocity="9.60" />
   </joint>
   <link
     name="Link6">
     <inertial>
       <origin
-        xyz="-0.000274575549283895 -7.3596587501723E-05 0.0700828204222902"
+        xyz="-0.000274577916602459 -7.35966871450722E-05 0.0700828201728696"
         rpy="0 0 0" />
       <mass
-        value="0.0303019437346346" />
+        value="0.0303019455167" />
       <inertia
-        ixx="1.15411086776968E-05"
-        ixy="7.12436535151465E-08"
-        ixz="-9.30040373570713E-09"
-        iyy="1.10884190423027E-05"
-        iyz="-2.47999052156489E-09"
-        izz="2.14713687887249E-05" />
+        ixx="1.15411094306873E-05"
+        ixy="7.12452260823137E-08"
+        ixz="-9.29996448151996E-09"
+        iyy="1.10884218603645E-05"
+        iyz="-2.48005623844806E-09"
+        izz="2.14713719931202E-05" />
     </inertial>
     <visual>
       <origin
@@ -390,23 +443,23 @@
       lower="-6.28"
       upper="6.28"
       effort="100"
-      velocity="1" />
+      velocity="17.5" />
   </joint>
   <link
-    name="Tool">
+    name="Tools">
     <inertial>
       <origin
-        xyz="-0.000274575549283895 -7.35965875017786E-05 -0.00291717957770976"
+        xyz="-0.00027457791660368 -7.35966871449611E-05 -0.00291717982713169"
         rpy="0 0 0" />
       <mass
-        value="0.0303019437346346" />
+        value="0.0303019455167" />
       <inertia
-        ixx="1.15411086776968E-05"
-        ixy="7.12436535151464E-08"
-        ixz="-9.30040373568712E-09"
-        iyy="1.10884190423027E-05"
-        iyz="-2.47999052156478E-09"
-        izz="2.14713687887249E-05" />
+        ixx="1.15411094306873E-05"
+        ixy="7.12452260822958E-08"
+        ixz="-9.29996448151563E-09"
+        iyy="1.10884218603645E-05"
+        iyz="-2.48005623844378E-09"
+        izz="2.14713719931202E-05" />
     </inertial>
     <visual>
       <origin
@@ -414,7 +467,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mz07l/meshes/Tool.STL" />
+          filename="package://mz07l/meshes/Tools.STL" />
       </geometry>
       <material
         name="">
@@ -428,7 +481,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mz07l/meshes/Tool.STL" />
+          filename="package://mz07l/meshes/Tools.STL" />
       </geometry>
     </collision>
   </link>
@@ -441,7 +494,7 @@
     <parent
       link="Link6" />
     <child
-      link="Tool" />
+      link="Tools" />
     <axis
       xyz="0 0 0" />
   </joint>
